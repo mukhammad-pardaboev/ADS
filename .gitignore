@@ -1,0 +1,10 @@
+# IDE
+.vscode
+
+# Binary files
+bin
+*.bin
+
+# Logs
+logs
+*.log
