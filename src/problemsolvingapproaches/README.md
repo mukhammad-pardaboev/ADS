@@ -130,26 +130,29 @@ _This forces you to think about the code you'll write before you write it, and h
 > 
 > Write a function which takes in a string and returns counts of each character in the string
 
-```javascript
-function charCount(str) {
-    // make object to return at end
-    var result = {};
-    // loop over string, for each character...
-    for (let i = 0; i < str.length; i++) {
-        let char = str[i].toLowerCase();
-        // if the char is a number/letter AND is a key in object, add one to count
-        if (result[char] > 0) {
-            result[char]++;
+```java
+// 1-Solurion O(n)
+public class CharCount {
+    public static Map<Character, Integer> countChar(String str) {
+        if (str.isEmpty())
+            return null;
+        Map<Character, Integer> result = new HashMap<>();
+        int value;
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = Character.toLowerCase(str.charAt(i));
+
+            if (result.containsKey(ch)) {
+                value = result.get(ch);
+                result.put(ch, ++value);
+            } else {
+                value = 1;
+                result.put(ch, value);
+            }
         }
-        // if the char is a number/letter AND is not in object, add it and set value to 1
-        else {
-            result[char] = 1;
-        }
+        return result;
     }
-        // if the character is something else (space, period, etc) don't do anything
-    // return object at end
-    return result;
-}
+};
 ```
 
 ### Look Back and Refactor
@@ -168,39 +171,56 @@ function charCount(str) {
 > 
 > Write a function which takes in a string and returns counts of each character in the string
 
-```javascript
-// 1-Solurion O(n)
-function charCount(str) {
-    var result = {};
-    for (let char of str) {
-        char = char.toLowerCase();
-        if (/[a-z0-9]/.test(char)) {
-            result[char] = ++result[char] ||  1;
-        }
-    }
-    return result;
-}
-
-
+```java
 // 2-Solurion O(n)
-function charCount(str) {
-    var result = {};
-    for (let char of str) {
-        if (isAlphaNumeric(char)) {
-            char = char.toLowerCase();
-            result[char] = ++result[char] ||  1;
-        }
-    }
-    return result;
-}
+public class CharCount {
+    public static Map<Character, Integer> countChar(String str) {
+        if (str.isEmpty())
+            return null;
+        Map<Character, Integer> result = new HashMap<>();
+        int value;
 
-function isAlphaNumeric(char) {
-    var code = char.charCodeAt(0);
-    if (!(code > 47 && code < 58) &&
-        !(code > 64 && code < 91) &&
-        !(code > 96 && code < 123)) {
-        return false;
+        for (int i = 0; i < str.length(); i++) {
+            Character ch = Character.toLowerCase(str.charAt(i));
+
+            if (Pattern.matches("[a-z\\d]", ch.toString())) {
+                if (result.containsKey(ch)) {
+                    value = result.get(ch);
+                    result.put(ch, ++value);
+                } else {
+                    value = 1;
+                    result.put(ch, value);
+                }
+            }
+        }
+        return result;
     }
-    return true;
+};
+
+// 3-Solurion O(n)
+public class CharCount {
+    public static Map<Character, Integer> countChar(String str) {
+        if (str.isEmpty())
+            return null;
+        Map<Character, Integer> result = new HashMap<>();
+        int value;
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            if (isAlphaNumeric(ch)) {
+                ch = Character.toLowerCase(ch);
+                value = result.containsKey(ch) ? result.get(ch) + 1 : 1;
+                result.put(ch, value);
+            }
+        }
+        return result;
+    }
+
+    private static boolean isAlphaNumeric(char ch) {
+        return ch > 47 && ch < 58 ||
+                ch > 64 && ch < 91 ||
+                ch > 96 && ch < 123;
+    }
 }
 ```

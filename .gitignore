@@ -1,9 +1,12 @@
 # IDE
 .vscode
+.idea
 
 # Binary files
 bin
 *.bin
+out
+*.out
 
 # Logs
 logs

@@ -13,7 +13,7 @@ class AddUpTo {
 
     // System.out.println(result);
 
-    addUpToTiming(addUpTo, 1000000000, 2);
+    addUpToTiming(addUpTo, 1000000000, 1);
   }
 
   private static void addUpToTiming(
@@ -41,7 +41,7 @@ class AddUpTo {
     System.out.println("Time Elapsed for addUpTo" + methodNum + ": " + elapsedTimeInSecond + " seconds");
   }
 
-  public int addUpTo1(int n) {
+  public static int addUpTo1(int n) {
     int total = 0;
     for (int i = 1; i <= n; i++) {
       total += i;
@@ -49,7 +49,7 @@ class AddUpTo {
     return total;
   }
 
-  public int addUpTo2(int n) {
+  public static int addUpTo2(int n) {
     return n * (n + 1) / 2;
   }
 }
