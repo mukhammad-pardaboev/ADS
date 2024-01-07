@@ -1,0 +1,35 @@
+Write a function called same, which accepts two arrays. 
+The function should return true if every value in the array has its corresponding value 
+squared in the second array. The frequency of values must be the same.
+
+Examples:
+
+same([1, 2, 3], [1, 4, 9]) => true
+same([1, 2, 5, 2], [1, 4, 4, 20]) => false
+same([1, 2, 3, 4], [1, 1, 9, 16]) => false
+same([1], [1, 9]) => false
+same([], [1]) => ?
+same(['1', '2'], ['1', '4']) => ?
+
+1-Solution O(n**2)
+
+if the length of arrays are not equal, then return false.
+  loop over the first array
+    square the current element
+    if the element is not in the second array, then return false.
+    else remove that element from the second array
+  return true.
+
+2-Solution O(n)
+
+if the length of arrays are not equal, then return false
+define the lookup hashmap to store and count unique values
+  loop over the first array
+    square the current element
+    if the element is key in the map, increment the value of the key by one.
+    if the element is not a key in the map, add it with value 1
+  loop over the second array
+    if the element is not in the map or the value is less than/or equal zero,
+    then return false
+    if else subtract by one
+  return true.

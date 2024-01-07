@@ -1,0 +1,30 @@
+Write a function called maxSubarraySum which accepts an array of integers and a number called n.
+The function should calculate the maximum sum of n consecutive elements in the array.
+
+maxSubarraySum([1,2,5,2,8,1,5],2) // 10
+maxSubarraySum([1,2,5,2,8,1,5],4) // 17
+maxSubarraySum([4,2,1,6],1) // 6
+maxSubarraySum([4,2,1,6,2],4) // 13
+maxSubarraySum([],4) // null
+
+1 - Solution 
+Time: O(m*n)
+Space: O(1)
+
+// define variable called maxSum and set the initial value to zero
+// loop over the array
+  // loop over the subarray while the index less than n number
+    // sum all elements and assign temporary variable called tempSum
+  // set maxSum by getting max between tempSum and maxSum
+// return maxSum
+
+2 - Solution
+Time: O(n)
+Space: O(1)
+
+// define variable called maxSum
+// loop over items from start to the index n by summing each item and assign sum to the maxSum
+// loop over items 
+  // subtract the item from the left and add item with index + n + 1 to the tempSum
+  // and set maxSum by comparing tempSum and maxSum
+// return maxSum
