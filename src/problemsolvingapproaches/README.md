@@ -171,8 +171,9 @@ public class CharCount {
 > 
 > Write a function which takes in a string and returns counts of each character in the string
 
+2 - Solution O(n)
+
 ```java
-// 2-Solurion O(n)
 public class CharCount {
     public static Map<Character, Integer> countChar(String str) {
         if (str.isEmpty())
@@ -196,8 +197,11 @@ public class CharCount {
         return result;
     }
 };
+```
 
-// 3-Solurion O(n)
+3 - Solution O(n)
+
+```java
 public class CharCount {
     public static Map<Character, Integer> countChar(String str) {
         if (str.isEmpty())

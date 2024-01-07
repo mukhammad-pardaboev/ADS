@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class CharCount {
     public static void main(String[] args) {
-        Map<Character, Integer> characterIntegerMap = countChar("Hi there");
+        Map<Character, Integer> characterIntegerMap = countChar("Hi there !! 121");
 
         System.out.println("Result: " + characterIntegerMap.toString());
     }
