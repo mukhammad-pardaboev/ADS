@@ -60,7 +60,7 @@ public class FindDuplicates {
 
         for (int num : nums) {
             if (set.contains(num)) {
-                duplicates.coadd(num);
+                duplicates.add(num);
             } else {
                 set.add(num);
             }
