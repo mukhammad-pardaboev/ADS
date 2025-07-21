@@ -77,12 +77,12 @@ class Solution:
     return dummy_head.next
 
 l1_3 = ListNode(3, None)
-l1_2 = ListNode(4, l1_3)
-l1 = ListNode(2, l1_2)
+l1_2 = ListNode(9, None)
+l1 = ListNode(9, l1_2)
 
 l2_3 = ListNode(4, None)
 l2_2 = ListNode(6, l2_3)
-l2 = ListNode(5, l2_2)      
+l2 = ListNode(1, None)      
 solution = Solution()
 node = solution.addTwoNumbers2(l1, l2)
 list_val = []
