@@ -13,6 +13,11 @@ class AddUpTo1 {
     System.out.println("Total: " + total);
   }
 
+  /**
+   * First: naive approach O(n) complexity
+   * @param n
+   * @return
+   */
   public static long addUpTo(long n) {
     long total = 0;
     for (int i = 1; i <= n; i++) {
