@@ -63,7 +63,7 @@
     - charCount("aaaa") => {a:4}
     - charCount("hello") => {h:1, e:1, l:2, o:1}
 > 2. Progress to more complex examples
-     - charCount("my phone number is 182763") => what about spaces and numbers? 
+    - charCount("my phone number is 182763") => what about spaces and numbers? 
     - charCount("Hello hi") What about (upper/lower)casing?
 > 3. Explore examples with Empty inputs
     - charCount("") => What should be returned?
@@ -130,8 +130,9 @@ _This forces you to think about the code you'll write before you write it, and h
 > 
 > Write a function which takes in a string and returns counts of each character in the string
 
+1-Solution O(n)
+
 ```java
-// 1-Solurion O(n)
 public class CharCount {
     public static Map<Character, Integer> countChar(String str) {
         if (str.isEmpty())
